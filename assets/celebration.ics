@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Shraddha and Satyam//Engagement Invitation//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shraddha-satyam-20261020@invitation.local
+DTSTAMP:20261018T000000Z
+DTSTART:20261020T063000Z
+DTEND:20261020T103000Z
+SUMMARY:Shraddha & Satyam - Engagement Ceremony
+LOCATION:Darbar Hall\, Country Inn & Suites by Radisson\, Sahibabad\, Ghazi
+ abad\, Uttar Pradesh\, India
+DESCRIPTION:Please join us for our engagement ceremony.\n20 October 2026\, 
+ 12 noon to 4 pm IST.\nMap: https://share.google/iRP4Nb8JHXXUwZSCt
+URL:https://share.google/iRP4Nb8JHXXUwZSCt
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Shraddha & Satyam engagement tomorrow at 12 noon IST
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,20 @@
+/* Scroll reveals an actual paper leaf; the browser keeps its normal scrolling. */
+.book-leaf{position:relative;perspective:2200px;isolation:isolate;overflow:hidden;overflow:clip;min-width:0}
+.js .book-leaf>.book-page{position:relative;transform-origin:0 0;transform:rotateY(var(--page-angle,0deg));opacity:1;transition:none;backface-visibility:hidden}
+.page-turn-sheet{position:absolute;inset:0;z-index:3;pointer-events:none;transform-origin:left center;transform:rotateY(var(--paper-angle,0deg));backface-visibility:hidden;border-right:1px solid #c9ae79;border-radius:0 5px 8px 0;background:linear-gradient(90deg,#cbb99955,transparent 5%,transparent 84%,#fffdf2bb 94%,#c8ad7c55),radial-gradient(ellipse at 65% 20%,#fffaf0,#f1e5d1);box-shadow:8px 4px 24px #5b3a2826;opacity:var(--paper-opacity,1)}
+.page-turn-sheet:after{content:'';position:absolute;right:0;bottom:0;width:46px;height:46px;background:linear-gradient(135deg,transparent 49%,#dfcba9 50%,#fff9ed 85%);border-radius:0 0 7px 0;opacity:.7}
+.page-spine{position:absolute;inset:0 auto 0 0;width:24px;z-index:4;pointer-events:none;background:linear-gradient(90deg,#6d4c2a26,#dec69d13 45%,transparent);opacity:var(--spine-opacity,0)}
+.book-leaf--dark .page-turn-sheet{border-right-color:#aa844e;background:linear-gradient(90deg,#27101b55,transparent 8%,transparent 82%,#b28a5426 95%,#25101a55),linear-gradient(120deg,#542631,#351520);box-shadow:8px 4px 24px #210b2133}
+.book-leaf--dark .page-turn-sheet:after{background:linear-gradient(135deg,transparent 49%,#8c6544 50%,#48212c 85%)}
+.book-leaf.is-open>.page-turn-sheet,.book-leaf.is-open>.page-spine{visibility:hidden}
+@media(max-width:767px), (max-width:1024px) and (pointer:coarse){.book-leaf{perspective:1500px}.page-turn-sheet{box-shadow:5px 2px 15px #5b3a281a}.page-turn-sheet:after{width:30px;height:30px}.page-spine{width:15px}}
+@media(prefers-reduced-motion:reduce){.js .book-leaf>.book-page{transform:none!important;opacity:1}.page-turn-sheet,.page-spine{display:none}}
+
+/* Ease toward the scroll position for a softer, slower paper turn. */
+.js .book-leaf>.book-page{transition:transform 2.8s cubic-bezier(.2,.7,.3,1)}
+.page-turn-sheet{transition:transform 3.2s cubic-bezier(.2,.7,.3,1),opacity 2.8s ease,visibility 0s}
+.page-spine{transition:opacity 3s ease,visibility 0s}
+.book-leaf.is-open>.page-turn-sheet{transition-delay:0s,0s,3.2s}
+.book-leaf.is-open>.page-spine{transition-delay:0s,3.2s}
+@media(max-width:767px), (max-width:1024px) and (pointer:coarse){.js .book-leaf>.book-page{transition-duration:2.5s}.page-turn-sheet{transition-duration:2.9s,2.5s,0s}}
+@media(prefers-reduced-motion:reduce){.js .book-leaf>.book-page,.page-turn-sheet,.page-spine{transition:none}}

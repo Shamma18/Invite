@@ -1,0 +1,152 @@
+/* Phone layouts, including browser bars, display cutouts, and touch controls. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media(max-width:767px), (max-width:1024px) and (pointer:coarse){
+  html{scroll-padding-top:20px;scroll-padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+  body{font-size:15px}
+  .section-shell{padding-left:max(clamp(22px,6vw,36px),calc(env(safe-area-inset-left) + 16px));padding-right:max(clamp(22px,6vw,36px),calc(env(safe-area-inset-right) + 16px))}
+  .site-header{height:auto;min-height:78px;padding:max(12px,env(safe-area-inset-top)) max(22px,env(safe-area-inset-right)) 12px max(22px,env(safe-area-inset-left));gap:20px}
+  .monogram{flex-shrink:0;padding:5px 0}
+  nav{gap:18px;align-items:center}
+  nav a{display:inline-flex;align-items:center;min-height:44px;font-size:12px;line-height:1.4}
+  nav a:first-child{display:inline-flex}
+  .hero{display:flex;flex-direction:column;min-height:0;gap:0;padding-top:43px;padding-bottom:65px}
+  .hero-copy{width:100%;text-align:center}
+  .hero .eyebrow{justify-content:center;font-size:9px;letter-spacing:1.3px;gap:8px}
+  .hero .hindi-invocation{font-size:14px;margin:24px 0}
+  .hero h1{font-size:clamp(76px,19vw,110px);letter-spacing:-2.5px;line-height:.94}
+  .hero .name-join{justify-content:center;padding-left:0;height:54px;gap:18px}
+  .hero .name-join:before{content:'';height:1px;width:48px}
+  .hero .join-line{width:48px}
+  .hero .name-join i{font-size:45px}
+  .hero .hero-description{font-size:14px;line-height:1.9;margin:23px 0}
+  .hero .hero-date{margin:0 auto 20px;padding:12px 18px;gap:15px;max-width:100%;text-align:left}
+  .hero .date-number{font-size:45px;padding-right:15px}
+  .hero .hero-date div>span{font-size:12px;letter-spacing:1.5px}
+  .hero .hero-date small{font-size:11px;line-height:1.8}
+  .ceremony-tag{justify-content:center;font-size:9px;letter-spacing:1px;gap:9px;margin-top:20px}
+  .hero .hero-footnote{font-size:17px;line-height:1.5;margin-top:12px}
+  .hero .hero-art{width:100%;max-width:360px;min-height:500px;margin:30px auto 0;padding-bottom:35px}
+  .hero .sacred-arch{width:270px;height:443px}
+  .hero .arch-shadow{width:270px;height:443px;left:calc(50% - 129px);top:27px}
+  .hero .hero-mandala{width:465px;top:20px}
+  .hero .floral{width:155px;left:-2px;bottom:22px}
+  .hero .floral-right{width:140px;left:auto;right:-2px;bottom:32px}
+  .hero .art-caption{bottom:0}.hero .art-caption p{font-size:14px;line-height:1.5}
+  .hero .art-caption>span{display:none}
+  .hero .scroll-cue{left:0;bottom:18px;width:100%;justify-content:center;font-size:9px;letter-spacing:1.5px;min-height:30px}
+  .section-kicker{font-size:10px;letter-spacing:1.5px;line-height:1.8}
+  h2,.blessing-section h2,.celebration-copy h2,.film-copy h2,.venue-heading h2,.family-section h2{font-size:clamp(38px,10vw,48px);line-height:1.15;letter-spacing:-1px;text-wrap:balance}
+  .blessing-section,.venue-section{padding-top:58px;padding-bottom:58px}
+  .sanskrit{font-size:clamp(13px,3.6vw,17px);line-height:2.2;margin-top:24px}
+  .invitation-message,.celebration-copy>p,.film-copy>p{font-size:14px;line-height:1.9}
+  .invitation-message br,.celebration-copy>p br,.film-copy>p br{display:none}
+  .couple-details{flex-direction:column;gap:18px;margin:30px auto}
+  .couple-details article{width:100%}
+  .couple-details h3{font-size:51px;margin-bottom:12px}
+  .couple-details .section-kicker{font-size:10px}
+  .couple-details article p{font-size:15px;line-height:2}
+  .couple-join{font-size:38px;line-height:1.3}
+  .small-note{font-size:19px;line-height:1.5}
+  .countdown-section{flex-direction:column;text-align:center;padding:38px 22px;gap:24px}
+  .countdown-heading .section-kicker{font-size:9px;letter-spacing:1.2px}
+  .countdown-heading h2{font-size:clamp(31px,8.8vw,41px)}
+  .countdown-heading p{font-size:13px}
+  .countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;max-width:370px;gap:9px}
+  .countdown b{display:none}
+  .countdown div{min-width:0;padding:14px 4px}
+  .countdown div>span{font-size:clamp(36px,10vw,48px)}
+  .countdown small{font-size:9px;letter-spacing:.8px}
+  .celebration-section,.film-section{grid-template-columns:minmax(0,1fr);gap:42px;text-align:center;padding-top:58px;padding-bottom:58px}
+  .date-card{width:min(100%,300px);justify-self:center;padding:25px 28px}
+  .date-card-top{font-size:10px}.event-time{font-size:14px}.timezone{font-size:10px}
+  .film-frame{grid-row:2;width:min(100%,280px);height:auto;aspect-ratio:9/16;justify-self:center}
+  .film-frame>video{height:100%;width:100%;object-fit:contain}
+  .preview-motion{margin:14px auto 0;font-size:13px;min-height:44px;padding:10px 14px}
+  .venue-layout{grid-template-columns:minmax(0,1fr);gap:36px;text-align:center}
+  .venue-details{padding-left:0}.venue-details h3{font-size:50px}
+  .venue-city,.venue-hindi,.venue-date p{font-size:14px}
+  .venue-date{justify-content:center}.venue-details .section-kicker{font-size:11px}
+  .copy-location{margin:10px auto 0;font-size:13px}
+  .qr-card{width:min(100%,300px);margin:auto;padding:25px;transform:none}
+  .qr-corners{max-width:230px}.qr-corners img{width:100%;height:auto}
+  .qr-card h4{font-size:28px}.qr-card p,.qr-card .text-button{font-size:13px}
+  .family-section{padding:58px 22px 35px;background-size:auto,65px auto,65px auto}
+  .hosts{font-size:14px;line-height:2.2}.hosts span{font-size:14px}
+  .family-section>p:not(.hosts):not(.blessing-response){font-size:14px}
+  .button,.family-section .button{font-size:13px;min-height:48px;padding:13px 20px}
+  .text-button,.download-invite{min-height:44px;padding-top:10px;padding-bottom:10px}
+  .blessing-response{height:auto;min-height:35px;font-size:18px}
+  footer{padding-bottom:calc(48px + env(safe-area-inset-bottom))}
+  .footer-names{font-size:34px}.footer-date{font-size:10px}.footer-bottom{font-size:8px;letter-spacing:1.2px}
+  .audio-dock{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));max-width:none;border-radius:16px;display:flex;align-items:center}
+  .audio-dock>button{min-width:0;flex:1;width:auto;min-height:64px;padding:10px;gap:9px;border-radius:16px 0 0 16px}
+  .audio-icon{width:32px;height:32px;flex-shrink:0}
+  .audio-label{min-width:0}.audio-label strong{font-size:18px;line-height:1.2}.audio-label small{display:block;font-size:8px;letter-spacing:.9px;line-height:1.7}
+  .equalizer{display:none}
+  .audio-settings{width:70px;flex-shrink:0;border-top:0;border-left:1px solid #daceb870;padding:0 10px;min-height:44px}
+  .audio-settings input{height:44px;margin:0;width:100%;min-width:0}
+  .toast{bottom:calc(24px + env(safe-area-inset-bottom));font-size:13px}
+}
+@media(max-width:360px){
+  .site-header{padding-left:20px;padding-right:20px;gap:12px}nav{gap:12px}nav a{font-size:11px}
+  .hero .eyebrow{font-size:8px;letter-spacing:1px}.hero .tiny-line{display:none}
+  .hero .hero-description{font-size:13px}.hero .hero-date small{font-size:10px}
+  .ceremony-tag{font-size:8px;gap:7px}
+  .hero .hero-art{transform:none;min-height:475px}
+  .hero .sacred-arch{width:245px;height:433px}
+  .hero .arch-shadow{width:245px;height:433px;left:calc(50% - 117px)}
+  .hero .floral{width:138px}.hero .floral-right{width:123px}
+  .countdown small{font-size:8px;letter-spacing:.3px}
+  .audio-label strong{font-size:16px}.audio-label small{font-size:7px}.audio-settings{width:60px}
+}
+@media(max-height:500px) and (orientation:landscape) and (max-width:950px){
+  .audio-dock .audio-settings{display:none}.audio-dock>button{min-height:48px;padding:7px 12px}
+  .audio-dock{left:auto;width:230px;bottom:8px}.audio-label strong{font-size:16px}
+  .hero{min-height:0;padding-top:40px;padding-bottom:65px}
+}
+
+/* Keep flexible content inside its column and reserve space for browser cutouts. */
+@media(max-width:1024px) and (pointer:coarse), (max-width:767px){
+  .hero-copy,.hero-art,.celebration-copy,.film-copy,.venue-details,.venue-layout,.countdown-heading{min-width:0}
+  .site-header nav{flex-wrap:wrap;justify-content:flex-end;column-gap:clamp(10px,3vw,22px);row-gap:0}
+  .hero .art-caption p{white-space:normal;text-wrap:balance}
+  .hero .sacred-arch{max-width:100%}
+  .button{max-width:100%;text-align:center}
+  .venue-details h3,.hosts,.footer-bottom{overflow-wrap:break-word}
+  .family-section,footer{padding-left:max(22px,calc(env(safe-area-inset-left) + 16px));padding-right:max(22px,calc(env(safe-area-inset-right) + 16px))}
+  .countdown-section{padding-left:max(22px,calc(env(safe-area-inset-left) + 16px));padding-right:max(22px,calc(env(safe-area-inset-right) + 16px))}
+  .audio-dock>button{min-width:0}
+  .audio-settings input{touch-action:pan-x}
+  .toast{max-width:calc(100% - 32px);overflow-wrap:anywhere}
+}
+@media(max-width:320px){
+  .hero h1{font-size:clamp(58px,23vw,76px)}
+  .hero .hero-date{padding:10px;gap:10px}
+  .hero .date-number{padding-right:10px;font-size:39px}
+  .hero .hero-date div>span{font-size:11px;letter-spacing:1px}
+  .hero .hero-date small{font-size:9px}
+  .audio-label strong{font-size:15px}.audio-settings{width:52px;padding:0 7px}
+}
+@media(min-width:700px) and (max-width:1024px) and (pointer:coarse) and (orientation:landscape){
+  .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;padding-top:42px;padding-bottom:70px}
+  .hero .hero-art{margin:0;min-height:480px}
+  .hero h1{font-size:clamp(72px,10vw,96px)}
+  .hero .hero-description{font-size:14px}
+  .celebration-section,.film-section{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+  .film-frame{grid-row:1;width:min(100%,240px)}
+  .venue-layout{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+}
+@media(max-height:500px) and (orientation:landscape) and (pointer:coarse){
+  .audio-dock{left:auto;right:max(12px,env(safe-area-inset-right));bottom:calc(8px + env(safe-area-inset-bottom));width:min(310px,calc(100% - 24px));display:flex;border-radius:14px}
+  .audio-dock>button{min-height:52px;padding:8px;gap:8px;border-radius:14px 0 0 14px}
+  .audio-dock .audio-settings{display:flex;width:60px;min-height:44px}
+  .audio-label strong{font-size:16px}.audio-label small{font-size:7px;letter-spacing:.6px}
+}
+
+@media(max-width:767px), (max-width:1024px) and (pointer:coarse){
+  .venue-details h3{font-size:clamp(34px,8.8vw,48px);line-height:1.15}
+  .venue-hindi{line-height:2;overflow-wrap:break-word}
+}
+
+/* Give the event hall a prominent title at every screen size. */
+.venue-details .venue-hall{font-family:var(--serif);font-size:clamp(40px,5vw,64px);font-weight:500;line-height:1.12;letter-spacing:.015em;color:var(--gold);margin-bottom:18px;text-wrap:balance}

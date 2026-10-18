@@ -1,0 +1,170 @@
+/* The invitation cover opens on a trusted click or tap. */
+.opening-veil{display:none;pointer-events:none}
+.js .opening-veil{display:block;position:fixed;inset:0;z-index:90;overflow:hidden;pointer-events:auto}
+.opening-veil>.door-panel{position:absolute;top:0;bottom:0;width:50.1%;background:repeating-linear-gradient(90deg,#ffffff00 0 35px,#e6c27d06 36px 38px),linear-gradient(100deg,#241019,#542334,#32141f);box-shadow:0 0 60px #17060f66}
+.opening-veil>.door-panel:first-child{left:0;border-right:1px solid #d2b173;animation:none}
+.opening-veil>.door-panel:nth-child(2){right:0;border-left:1px solid #d2b173;animation:none}
+@keyframes curtain-left{to{transform:translateX(-102%)}}
+@keyframes curtain-right{to{transform:translateX(102%)}}
+.hero-copy{animation:none}
+.hero-copy>.eyebrow,.hero-copy>.hindi-invocation,.hero-copy>.hero-description,.hero-copy>.hero-date,.hero-copy>.ceremony-tag,.hero-copy>.hero-footnote{animation:invitation-arrive 1.8s both;animation-delay:2.25s}
+.hero-copy>.hindi-invocation{animation-delay:2.4s}
+.hero-copy>h1{animation:none}
+.hero-copy h1>span:not(.name-join){display:block;animation:name-arrive 2s 2.35s both}
+.hero-copy h1>span:last-child{animation-delay:2.65s}
+.hero-copy .name-join{animation:invitation-arrive 1.8s 2.5s both}
+.hero-copy>.hero-description{animation-delay:2.8s}
+.hero-copy>.hero-date{animation-delay:3.05s}
+.hero-copy>.ceremony-tag{animation-delay:3.25s}
+.hero-copy>.hero-footnote{animation-delay:3.4s}
+@keyframes invitation-arrive{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes name-arrive{from{opacity:0;transform:translateY(23px);filter:blur(3px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+.hero .arch-inner{position:relative;isolation:isolate}
+.hero .arch-inner:before{content:'';position:absolute;width:67%;aspect-ratio:1;left:16.5%;top:21%;border:1px solid #ebcd9124;border-radius:50%;background:radial-gradient(circle,#f1c76c20,transparent 70%);box-shadow:0 0 30px #ecc4800d,inset 0 0 25px #ecc4800d;z-index:-1;pointer-events:none;animation:sacred-breath 8s ease-in-out infinite}
+@keyframes sacred-breath{0%,100%{opacity:.35;transform:scale(.93)}50%{opacity:1;transform:scale(1.06)}}
+.hero.effects-paused *,.hero.effects-paused *:before,.hero.effects-paused *:after{animation-play-state:paused!important}
+body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after{animation-play-state:paused!important}
+.js .reveal .motion-item{transition:opacity 1.4s ease,translate 1.4s cubic-bezier(.2,.7,.3,1);transition-delay:var(--reveal-delay,0ms)}
+.js .reveal:not(.visible) .motion-item{opacity:0;translate:0 25px}
+.js .reveal.visible .motion-item{opacity:1;translate:0 0}
+.scroll-cue>span:last-child{animation:scroll-invitation 3.8s ease-in-out infinite}
+@keyframes scroll-invitation{0%,100%{transform:translateY(-3px)}50%{transform:translateY(4px)}}
+.button{position:relative;isolation:isolate;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.button:active{transform:scale(.98)}
+.button-ripple{position:absolute;left:var(--ripple-x);top:var(--ripple-y);width:20px;height:20px;margin:-10px;border-radius:50%;background:#e8c88a55;pointer-events:none;z-index:-1;animation:blessing-ripple 1.2s ease-out forwards}
+@keyframes blessing-ripple{to{transform:scale(30);opacity:0}}
+@media(hover:hover) and (pointer:fine){.button:hover{transform:translateY(-3px);box-shadow:0 8px 25px #78492f25}.date-card{transition:translate .4s,box-shadow .4s}.date-card:hover{translate:0 -5px;box-shadow:0 20px 45px #75513522}}
+@media(max-width:767px){.hero-copy h1>span:not(.name-join){animation-name:invitation-arrive}.opening-veil>.door-panel{box-shadow:none}}
+@media(prefers-reduced-motion:reduce){.hero-copy>*,.hero-copy h1>span,.hero .arch-inner:before,.scroll-cue>span:last-child{animation:none!important}.js .reveal .motion-item{opacity:1;translate:none;transition:none}.button-ripple{display:none}}
+
+/* Slower layers add depth without moving the invitation text. */
+.hero .sacred-arch{animation-duration:11s}
+.hero .hero-mandala{animation-duration:240s}
+.temple-canopy i{animation-duration:9s}
+.hero .diya i{animation-duration:4.5s}
+.hero .ambient-light span{animation-duration:34s}
+.hero .floral{transform-origin:50% 90%;animation:floral-breeze 15s ease-in-out infinite alternate}
+.hero .floral-right{animation-delay:-8s;animation-direction:alternate-reverse}
+@keyframes floral-breeze{from{rotate:-1.5deg}to{rotate:1.5deg}}
+.hero .ambient-light:before,.hero .ambient-light:after{content:'';position:absolute;inset:-40%;pointer-events:none;background:linear-gradient(110deg,transparent 35%,#efc47707 48%,transparent 60%);animation:temple-light 28s ease-in-out infinite alternate}
+.hero .ambient-light:after{animation-delay:-14s;animation-direction:alternate-reverse;opacity:.65}
+@keyframes temple-light{from{transform:translate3d(-5%,0,0) rotate(-4deg)}to{transform:translate3d(5%,0,0) rotate(4deg)}}
+.sacred-orbits{position:absolute;left:50%;top:46%;width:91%;max-width:495px;aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid #d9b87720;border-radius:50%;pointer-events:none;z-index:0}
+.orbit-light{position:absolute;inset:0;border-radius:50%;animation:sacred-orbit 60s linear infinite}
+.orbit-light:after{content:'';position:absolute;left:50%;top:-3px;width:5px;height:5px;border-radius:50%;background:#f3d7a3;box-shadow:0 0 13px 3px #e2b96d55}
+.orbit-light:nth-child(2){inset:10%;animation-duration:80s;animation-delay:-29s;animation-direction:reverse;border:1px dashed #d9b87718}
+.orbit-light:nth-child(3){inset:-5%;animation-duration:100s;animation-delay:-65s;opacity:.65}
+@keyframes sacred-orbit{to{transform:rotate(360deg)}}
+.reveal h2:after{content:'';display:block;width:65px;height:1px;margin:20px 0;background:linear-gradient(90deg,transparent,#b58b51,transparent);transform-origin:center}
+.blessing-section h2:after,.venue-heading h2:after,.family-section h2:after{margin-left:auto;margin-right:auto}
+.js .reveal:not(.visible) h2:after{transform:scaleX(0)}
+.js .reveal.visible h2:after{animation:blessing-line 2.5s .35s both}
+@keyframes blessing-line{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+.js .reveal{transition-duration:1.4s}
+@media(min-width:768px) and (max-width:1100px){
+  .hero{padding-top:55px;padding-bottom:80px;gap:20px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .hero h1{font-size:clamp(76px,8.7vw,96px)}
+  .hero .hero-art{min-width:0}
+  .hero .hero-description{max-width:100%}
+  .ceremony-tag{letter-spacing:1px}
+}
+@media(max-width:767px){
+  .sacred-orbits{width:94%;top:45%}.orbit-light:nth-child(3){display:none}
+  .hero .floral{animation-duration:20s}
+  @keyframes floral-breeze{from{rotate:-.7deg}to{rotate:.7deg}}
+  .hero .ambient-light:after{display:none}
+  .reveal h2:after{margin-left:auto;margin-right:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  .sacred-orbits{display:none}.hero .floral,.hero .ambient-light:before,.hero .ambient-light:after{animation:none}
+  .js .reveal.visible h2:after{animation:none;transform:none;opacity:1}
+}
+
+/* Blessings fall continuously across every section after the opening. */
+.blessing-shower{position:fixed;inset:0;z-index:8;overflow:hidden;pointer-events:none;clip-path:inset(var(--shower-top,100vh) 0 0 0);visibility:hidden;opacity:0;transition:opacity .8s;contain:strict}
+.blessing-shower.is-active{visibility:visible;opacity:1}
+.shower-piece{position:absolute;left:var(--petal-x);top:-35px;display:block;opacity:0;animation:continuous-blessings var(--petal-duration) var(--petal-delay) linear infinite;will-change:transform}
+.shower-flower{width:var(--bloom-size,34px);height:var(--bloom-size,34px);background:center/contain no-repeat;filter:drop-shadow(0 2px 2px #675a4930);--piece-opacity:.92}
+.bloom-rose{background-image:url('assets/blessing-rose.svg')}
+.bloom-marigold{background-image:url('assets/blessing-marigold.svg')}
+.bloom-lavender{background-image:url('assets/blessing-lavender.svg')}
+
+@keyframes continuous-blessings{0%{opacity:0;transform:translate3d(0,0,0) rotate(0)}10%,85%{opacity:var(--piece-opacity,.6)}100%{opacity:0;transform:translate3d(var(--petal-drift),var(--shower-distance,110vh),0) rotate(var(--petal-spin))}}
+.blessing-shower:not(.is-active) .shower-piece{animation-play-state:paused}
+@media(max-width:767px), (max-width:1024px) and (pointer:coarse){.shower-piece:nth-child(n+15){display:none}.shower-flower{width:calc(var(--bloom-size,34px)*.78);height:calc(var(--bloom-size,34px)*.78)}}
+@media(prefers-reduced-motion:reduce){.blessing-shower{display:none}}
+
+#petals{clip-path:inset(var(--shower-top,100vh) 0 0 0)}
+
+/* A royal gold-and-enamel seal sits across the opening doors. */
+.opening-seal{position:absolute;left:50%;top:47%;width:clamp(176px,24vw,224px);height:clamp(176px,24vw,224px);transform:translate(-50%,-50%);animation:none;pointer-events:none}
+.opening-seal img{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 10px 18px #16060d88) drop-shadow(0 0 16px #e6bf761c)}
+@keyframes seal-release{0%,25%{opacity:1;transform:translate(-50%,-50%) rotate(0deg) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) rotate(3deg) scale(1.1)}}
+.petal.blessing-burst:nth-child(n){width:30px;height:30px;border:0;border-radius:0;background:var(--burst-image) center/contain no-repeat;box-shadow:none;filter:drop-shadow(0 2px 2px #675a4930)}
+
+
+/* A soft halo and moving highlight give the engraved seal depth. */
+.opening-seal:before{content:none}
+.opening-seal:after{content:'';position:absolute;inset:12%;border-radius:50%;pointer-events:none;background:linear-gradient(115deg,transparent 30%,#fff4cd88 46%,transparent 62%);background-size:260% 100%;animation:none;mix-blend-mode:soft-light}
+@keyframes seal-glint{from{background-position:140% 0;opacity:0}30%{opacity:.8}to{background-position:-60% 0;opacity:0}}
+
+/* Reduced motion keeps offscreen content readable before reveal observers run. */
+@media(prefers-reduced-motion:reduce){
+  .js .reveal:not(.visible) .motion-item{opacity:1;translate:none;transition:none}
+  .js .reveal:not(.visible) h2:after{transform:none;opacity:1}
+}
+
+/* Let the arch grow with its inscription; the bottom star follows the label. */
+.hero .sacred-arch{height:auto}
+.hero .arch-inner{height:auto;padding-bottom:12px}
+.hero .arch-english{flex-shrink:0;text-align:center}
+.hero .arch-bottom-star{position:static;display:block;flex:none;font-size:22px;line-height:1;margin-top:14px}
+
+html.invitation-closed,html.invitation-opening{overflow:hidden}
+.invitation-closed .hero-copy>*,.invitation-closed .hero-copy h1>span{animation-play-state:paused!important}
+.opening-veil.is-opening>.door-panel:first-child{animation:curtain-left 4.8s .25s cubic-bezier(.65,0,.2,1) both}
+.opening-veil.is-opening>.door-panel:nth-child(2){animation:curtain-right 4.8s .25s cubic-bezier(.65,0,.2,1) both}
+.opening-veil.is-opening .opening-seal{animation:seal-release 1.9s ease-in-out both}
+.opening-veil.is-opening .opening-seal:after{animation:seal-glint 1.8s ease-in-out both}
+.opening-trigger{position:absolute;inset:0;z-index:2;display:block;width:100%;height:100%;padding:0;cursor:pointer;color:#edd7a8;touch-action:manipulation}
+.opening-trigger:focus-visible{outline:2px solid #d9bc7e;outline-offset:-16px}
+.opening-prompt{position:absolute;left:50%;top:calc(47% + clamp(88px,12vw,112px) + 30px);transform:translateX(-50%);width:max-content;max-width:calc(100% - 40px);font:500 10px/1.6 var(--sans);letter-spacing:2px;text-transform:uppercase;text-align:center}
+.opening-prompt small{display:block;margin-top:8px;font:italic 22px/1.4 var(--serif);letter-spacing:0;text-transform:none;color:#d5b785}
+.opening-trigger:disabled{pointer-events:none;cursor:default}
+.opening-veil.is-opening .opening-prompt{opacity:0;transition:opacity .5s ease}
+@media(max-width:360px){.opening-prompt{font-size:9px;letter-spacing:1.4px}.opening-prompt small{font-size:20px}}
+
+/* Slow light over engraved doors adds depth without changing the invitation text. */
+.js .opening-veil{perspective:1800px}
+.opening-veil>.door-panel{backface-visibility:hidden;transform-style:preserve-3d}
+.opening-veil>.door-panel:first-child{transform-origin:left center}
+.opening-veil>.door-panel:nth-child(2){transform-origin:right center}
+.opening-veil>.door-panel:before{content:'';position:absolute;inset:22px;border:1px solid #d8b77830;background:linear-gradient(#d8b77880,#d8b77880) left top/24px 1px no-repeat,linear-gradient(#d8b77880,#d8b77880) left top/1px 24px no-repeat,linear-gradient(#d8b77880,#d8b77880) right bottom/24px 1px no-repeat,linear-gradient(#d8b77880,#d8b77880) right bottom/1px 24px no-repeat;box-shadow:inset 0 0 0 5px #28111b33;pointer-events:none;animation:royal-frame-glow 8s ease-in-out infinite alternate}
+.opening-veil>.door-panel:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(112deg,transparent 35%,#f8dfa914 47%,#fff0cd09 51%,transparent 63%);background-size:300% 100%;animation:royal-door-sheen 14s ease-in-out infinite}
+.opening-veil>.door-panel:nth-child(2):after{animation-delay:-7s}
+.opening-veil:before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,#efc77e13,transparent 62%);animation:royal-ambience 8s ease-in-out infinite alternate}
+.opening-veil:after{content:'';position:absolute;left:50%;top:-10%;width:12vw;height:120%;z-index:1;pointer-events:none;opacity:0;transform:translateX(-50%) scaleX(.05);background:radial-gradient(ellipse,#fff5d959,#f0ce9220 35%,transparent 72%)}
+.opening-veil.is-opening:after{animation:royal-opening-light 5s ease-in-out both}
+.opening-seal:before{content:'';position:absolute;inset:-7px;border:1px solid #e4c68b29;border-radius:50%;box-shadow:0 0 0 5px #e4c68b08,0 0 32px #e4c68b14;pointer-events:none;animation:royal-seal-halo 7s ease-in-out infinite}
+.opening-veil:not(.is-opening) .opening-seal:after{animation:royal-seal-sheen 9s 1s ease-in-out infinite}
+@keyframes royal-frame-glow{from{opacity:.45}to{opacity:.85}}
+@keyframes royal-door-sheen{0%,18%{background-position:120% 0}72%,100%{background-position:-40% 0}}
+@keyframes royal-ambience{from{opacity:.4}to{opacity:1}}
+@keyframes royal-seal-halo{0%,100%{opacity:.45;transform:scale(.99)}50%{opacity:.85;transform:scale(1.04)}}
+@keyframes royal-seal-sheen{0%,15%{background-position:140% 0;opacity:0}25%{opacity:.55}48%{background-position:-60% 0;opacity:0}100%{background-position:-60% 0;opacity:0}}
+@keyframes royal-opening-light{0%{opacity:0;transform:translateX(-50%) scaleX(.05)}18%{opacity:.6;transform:translateX(-50%) scaleX(.4)}50%{opacity:.4;transform:translateX(-50%) scaleX(1.4)}100%{opacity:0;transform:translateX(-50%) scaleX(3)}}
+@keyframes curtain-left{0%{transform:translateX(0) rotateY(0)}45%{transform:translateX(-36%) rotateY(-12deg)}100%{transform:translateX(-104%) rotateY(-24deg)}}
+@keyframes curtain-right{0%{transform:translateX(0) rotateY(0)}45%{transform:translateX(36%) rotateY(12deg)}100%{transform:translateX(104%) rotateY(24deg)}}
+@media(max-width:767px){.opening-veil>.door-panel:before{inset:14px}.opening-veil:after{width:24vw}}
+@media(prefers-reduced-motion:reduce){.opening-veil:before,.opening-veil:after,.opening-seal:before{display:none}}
+
+/* Ganesh ji welcomes guests in a softly illuminated gold arch. */
+.opening-ganesha{isolation:isolate}
+.opening-ganesha img{inset:5% 14%;width:72%;height:90%;object-fit:contain;z-index:1;filter:brightness(1.65) saturate(.72) drop-shadow(0 3px 2px #16060d66) drop-shadow(0 0 12px #e6bf7638)}
+.opening-ganesha:before{inset:-5% 1%;border-radius:50% 50% 42% 42%;border:1px solid #e4c68b70;background:radial-gradient(ellipse at 50% 42%,#573040,#351626 78%);animation:none;box-shadow:0 0 0 5px #e4c68b08,inset 0 0 28px #e4c68b0d,0 0 40px #e4c68b20}
+.opening-ganesha:after{inset:-9% -3%;border-radius:50% 50% 42% 42%;border:1px solid #e4c68b26;background:none;mix-blend-mode:normal}
+.opening-veil:not(.is-opening) .opening-ganesha:after{animation:none}
+.opening-veil.is-opening .opening-ganesha:after{animation:none}
+
+/* The opening moves focus to the names without a browser outline. */
+#hero-title[tabindex="-1"]:focus{outline:none}
